@@ -1,0 +1,285 @@
+INTERVIEW QUESTIONS:
+
+Primitive data types - includes byte, short, int, long, float, double, boolean 
+and char
+A primitive data type specifies the size and type of variable values, 
+and it has no additional methods.
+Primitive number types are divided into two groups:
+Integer types stores whole numbers, positive or negative, without decimals. 
+Valid types are byte, short, int and long. Which type you should use, 
+depends on the numeric value.
+Floating Point Types - You should use a floating point type whenever you need 
+a number with a decimal - Float,Double
+A boolean data type is declared with the boolean keyword 
+and can only take the values true or false:
+The char data type is used to store a single character. 
+The character must be surrounded by single quotes, 
+The String data type is used to store a sequence of characters (text). 
+String values must be surrounded by double quotes:
+
+Non-Primitive Data Types
+Non-primitive data types are called reference types because they refer to objects.
+
+The main difference between primitive and non-primitive data types are:
+
+Primitive types are predefined (already defined) in Java. 
+Non-primitive types are created by the programmer
+ and is not defined by Java (except for String).
+Non-primitive types can be used to call methods to perform certain operations, 
+while primitive types cannot.
+A primitive type has always a value, while non-primitive types can be null.
+A primitive type starts with a lowercase letter, 
+while non-primitive types starts with an uppercase letter.
+The size of a primitive type depends on the data type, 
+while non-primitive types have all the same size.
+
+Array vs ArrayList:
+
+Array: Simple fixed sized arrays that we create in Java
+ArrayList : Dynamic sized arrays in Java that implement List interface.
+An array is basic functionality provided by Java. 
+ArrayList is part of collection framework in Java. 
+Therefore array members are accessed using [],
+while ArrayList has a set of methods to access elements and modify them.
+Array can contain both primitive data types as well as objects of a class depending 
+on the definition of the array. 
+ArrayList only supports object entries, not the primitive data types.
+ArrayList supports many additional operations like indexOf(), remove(), etc.
+These functions are not supported by Arrays.
+
+RECURSION:
+
+The process in which a function calls itself directly or indirectly is called recursion 
+and the corresponding function is called as recursive function.
+A function fun is called direct recursive if it calls the same function fun. 
+A function fun is called indirect recursive if it calls another function say fun_new 
+and fun_new calls fun directly or indirectly.
+The idea is to represent a problem in terms of one or more smaller problems, 
+and add one or more base conditions that stop the recursion.
+If the base case is not reached or not defined, then the stack overflow problem may arise.
+When any function is called from main(), the memory is allocated to it on the stack. 
+A recursive function calls itself, 
+the memory for the called function is allocated on top of memory 
+allocated to calling function 
+and different copy of local variables is created for each function call. 
+When the base case is reached, 
+the function returns its value to the function by whom it is called
+ and memory is de-allocated and the process continues. 
+
+GARBAGE COLLECTION:
+
+Java garbage collection is the process by which Java programs perform automatic memory 
+management.
+Java programs compile to bytecode that can be run on a Java Virtual Machine
+When Java programs run on the JVM, objects are created on the heap,
+ which is a portion of memory dedicated to the program. 
+Eventually, some objects will no longer be needed. 
+The garbage collector finds these unused objects and deletes them to free up memory.
+Java garbage collection is an automatic process. 
+The programmer does not need to explicitly mark objects to be deleted.
+The garbage collection implementation lives in the JVM. 
+
+LIST:
+
+List: The List is a child interface of Collection. 
+It is an ordered collection of objects in which duplicate values can be stored. 
+Since List preserves the insertion order,
+ it allows positional access and insertion of elements. 
+List interface is implemented by the classes of ArrayList, LinkedList, Vector and Stack. 
+List is an interface, 
+and the instances of List can be created by implementing various classes.
+
+ARRAY LIST:
+
+ArrayList is a part of collection framework and is present in java.util package. 
+It provides us with dynamic arrays in Java. 
+This class implements the List interface. 
+Similar to a List, 
+the size of the ArrayList is increased automatically if the collection grows 
+or shrinks if the objects are removed from the collection. 
+Java ArrayList allows us to randomly access the list. 
+ArrayList can not be used for primitive types, like int, char, etc. 
+We need a wrapper class for such cases.
+
+LINKED LIST:
+
+Linked List is a part of the Collection framework present in java.util package. 
+This class is an implementation of the LinkedList data structure 
+which is a linear data structure where the elements are not stored in contiguous locations 
+and every element is a separate object with a data part and address part. 
+The elements are linked using pointers and addresses. 
+Each element is known as a node. 
+Due to the dynamicity and ease of insertions and deletions, 
+they are preferred over the arrays. 
+It also has few disadvantages like the nodes cannot be accessed directly 
+instead we need to start from the head 
+and follow through the link to reach to a node we wish to access.
+
+VECTOR:
+
+The Vector class implements a growable array of objects. 
+Vectors basically fall in legacy classes but now it is fully compatible with collections. 
+It is found in the java.util package and implements the List interface, 
+so we can use all the methods of List interface here.
+Vector implements a dynamic array that means it can grow or shrink as required. 
+Like an array, it contains components that can be accessed using an integer index
+They are very similar to ArrayList 
+but Vector is synchronized 
+and has some legacy method that the collection framework does not contain.
+
+STACK:
+
+Java Collection framework provides a Stack class that models 
+and implements a Stack data structure. 
+The class is based on the basic principle of last-in-first-out. 
+In addition to the basic push and pop operations, 
+the class provides three more functions of empty, search, and peek. 
+The class can also be said to extend Vector
+ and treats the class as a stack with the five mentioned functions. 
+The class can also be referred to as the subclass of Vector.
+All Implemented Interfaces:Serializable,Cloneable,Iterable,Collection,List,RandomAccess.
+
+QUEUE:
+
+java.util.Queue interface.
+The Queue is designed to hold elements prior to their processing. 
+Some can be of a fixed capacity, 
+meaning they can contain only up to a certain number of elements.
+So, the idea is to push some elements into a Queue, and then retrieve them afterwards. 
+Generally, queues are returning elements respecting the First-In First-Out (FIFO) pattern, 
+meaning the oldest element of the queue is returned first, then the oldest after that, etc.
+But there can be other implementations which respect the Last-In First-Out (LIFO) pattern.
+We'll begin by adding an element to a Queue. 
+First, let's instantiate one using the ArrayDeque implementation, 
+which also implements the Deque interface.
+In order to add an element in this Queue, we have two possibilities: 
+the add() method or the offer() method.
+Both return a boolean value indicating if the element was added to the Queue or not, 
+according to its capacity (if it applies),
+the first will in fact never return false, 
+rather throwing an Exception when adding an element to a full Queue. 
+On the other hand, the second one will return false in such cases.
+Instead of ArrayDeque, which is unbounded, 
+let's use the LinkedBlockingQueue which can be assigned a capacity.
+classes that implements the Queue interface is
+ArrayDeque,LinkedList,DelayQueue,PriorityQueue.
+
+DEQUE:
+
+Deque stands for Double Ended Queue, 
+which means this is a queue that can be accessed by both ends,
+and therefore can be used with both FIFO and LIFO styles. 
+By default, it organizes its element LIFO style,
+ meaning that getting the first in the Deque would return the last that had been added.
+No Exception	offerFirst()	offer(), offerLast()
+Exception	addFirst(), push()	add(), addLast()
+No Exception	peek(), peekFirst()	poll(), pollFirst()
+Exception	getFirst(), element()	remove(), removeFirst(), pop()
+No Exception	peekLast()	pollLast()
+Exception	getLast()	removeLast()
+As for the Queue, we can iterate using the standard mechanisms and the forEach() method. 
+We just have to remember that, by default, 
+the Deque organizes its elements LIFO style and therefore will iterate on them, 
+top to bottom.
+
+
+Definition of OOP Concepts in Java:
+
+They are an abstraction, encapsulation, inheritance, and polymorphism.
+
+Abstraction means using simple things to represent complexity.
+simple things like objects, classes, 
+and variables represent more complex underlying code and data. 
+This is important because it lets avoid repeating the same work multiple times.
+
+Encapsulation. This is the practice of keeping fields within a class private, 
+then providing access to them via public methods. 
+It’s a protective barrier that keeps the data and code safe within the class itself. 
+This way, we can re-use objects like code components 
+or variables without allowing open access to the data system-wide.
+
+Inheritance. This is a special feature of Object Oriented Programming in Java. 
+It lets programmers create new classes 
+that share some of the attributes of existing classes. 
+
+Polymorphism. This Java OOP concept lets 
+we use the same word to mean different things in different contexts. 
+One form of polymorphism in Java is method overloading. 
+That’s when different meanings are implied by the code itself. 
+The other form is method overriding. 
+That’s when the different meanings are implied by the values of the supplied variables.
+
+In Java, an object is created from a class. We have already created the class , 
+so now we can use this to create objects.
+A class should always start with an uppercase first letter, 
+and that the name of the java file should match the class name.
+
+SOLID:
+Single Responsibility principle.
+The single-responsibility principle (SRP) is a computer-programming principle that states that every module,
+class or function in a computer program should have responsibility over a single part of that program's
+functionality, and it should encapsulate that part.
+
+Open/Closed principle.
+In object-oriented programming, the open–closed principle states "software entities
+(classes, modules, functions, etc.) should be open for extension, but closed for modification";
+that is, such an entity can allow its behaviour to be extended without modifying its source code.
+
+Liskov Substitution principle.
+The principle defines that objects of a superclass shall be replaceable with objects of its subclasses
+without breaking the application.
+That requires the objects of your subclasses to behave in the same way as the objects of your superclass.
+
+Interface Segregation principle.
+In the field of software engineering, the interface-segregation principle (ISP)
+states that no client should be forced to depend on methods it does not use.
+
+Dependency Inversion principle.
+The principle states: High-level modules should not depend on low-level modules.
+Both should depend on abstractions (e.g., interfaces). Abstractions should not depend on details.
+
+TEST DRIVEN DEVELOPMENT: Test First approach
+Test-driven development (TDD)
+
+DESIGN PATTERNS:
+Types of Design Patterns
+
+Creational-Deal with initialization and configuration of classes and objects
+-Singleton Pattern: A Singleton class is supposed to have only one instance
+-Prototype Pattern: Create new objects by copying this prototype
+-Builder Pattern: Same construction process can create different representations
+
+Structural-Describe ways to assemble objects to implement a new functionality
+-Facade Pattern: Defines a higher-level interface that makes the subsystem easier to use
+-Composite Pattern: Allows to combine different types of objects in tree structures
+
+Behavioral-Deal with dynamic interactions among societies of classes
+-Command Pattern: An object encapsulates all the information needed to call a method at a later time
+-Template Pattern: Define the skeleton of an algorithm in a method,leaving some implementation to its subclasses
+
+OVERRIDE:
+Ability to define a behavior that's specific to the subclass type,
+which means a subclass can implement a parent class method and then to modify behavior as needed.
+The overriding method has the same name, number and type of parameters,
+and return type as the method that it overrides.
+Method overriding is one of the way by which java achieve Run Time Polymorphism.
+
+OVERLOAD:
+In Java, two or more methods may have the same name but different number of parameters,
+different types of parameters, or both.
+
+ALGORITHMS:
+Algorithms in Java are static methods that can be used to perform various operations on collections.
+Since algorithms can be used on various collections, these are also known as generic algorithms.
+
+POJO:
+Plain Old Java Object.
+It is an ordinary Java object,
+not bound by any special restriction other than those forced by the Java Language Specification
+and not requiring any classpath.
+
+FILO:
+A Stack is a Last In First Out (LIFO) data structure.
+
+FIFO:
+First In, First Out (Queues are based on the FIFO principle).
